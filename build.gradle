@@ -46,6 +46,7 @@ dependencies {
 
     //데이터베이스로 세션 저장소활용
     implementation('org.springframework.session:spring-session-jdbc')
+    implementation("org.mariadb.jdbc:mariadb-java-client")
 
 }
 
