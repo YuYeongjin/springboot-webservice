@@ -14,20 +14,18 @@ import javax.servlet.http.HttpSession;
 @RequiredArgsConstructor
 @Component
 public class LoginUserArgumentResolver implements HandlerMethodArgumentResolver {
+
     private final HttpSession httpSession;
 
     @Override
-    public boolean supportsParameter(MethodParameter parameter){
-        boolean isLoginUsAnnotation = parameter.getParameterAnnotation(LoginUser.class)!= null;
+    public boolean supportsParameter(MethodParameter parameter) {
+        boolean isLoginUserAnnotation = parameter.getParameterAnnotation(LoginUser.class) != null;
         boolean isUserClass = SessionUser.class.equals(parameter.getParameterType());
-        return isLoginUsAnnotation&&isUserClass;
-    }
-    @Override
-    public Object resolveArgument(MethodParameter parameter,
-                                  ModelAndViewContainer mavContainer,
-                                  NativeWebRequest webRequest,
-                                  WebDataBinderFactory binderFactory)   throws Exception{
-        return httpSession.getAttribute("user");
+        return isLoginUserAnnotation && isUserClass;
     }
 
+    @Override
+    public Object resolveArgument(MethodParameter parameter, ModelAndViewContainer mavContainer, NativeWebRequest webRequest, WebDataBinderFactory binderFactory) throws Exception {
+        return httpSession.getAttribute("user");
+    }
 }
