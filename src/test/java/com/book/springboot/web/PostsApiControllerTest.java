@@ -5,6 +5,7 @@ import com.book.springboot.domain.posts.Posts;
 import com.book.springboot.domain.posts.PostsRepository;
 import com.book.springboot.web.dto.PostsSaveRequestDto;
 import com.book.springboot.web.dto.PostsUpdateRequestDto;
+import lombok.extern.log4j.Log4j2;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -56,7 +57,7 @@ public class PostsApiControllerTest {
                 .build();
     }
 
-    @After
+   @After
     public void tearDown() throws Exception {
         postsRepository.deleteAll();
     }
@@ -96,7 +97,7 @@ public class PostsApiControllerTest {
                 .content("content")
                 .author("author")
                 .build());
-
+        
         Long updateId = savedPosts.getId();
         String expectedTitle = "title2";
         String expectedContent = "content2";
