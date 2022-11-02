@@ -5,7 +5,6 @@ import com.book.springboot.domain.posts.Posts;
 import com.book.springboot.domain.posts.PostsRepository;
 import com.book.springboot.web.dto.PostsSaveRequestDto;
 import com.book.springboot.web.dto.PostsUpdateRequestDto;
-import lombok.extern.log4j.Log4j2;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
