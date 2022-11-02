@@ -12,8 +12,6 @@ import java.util.List;
 
 @RequiredArgsConstructor
 @Configuration
-@EnableWebSecurity
-@EnableGlobalMethodSecurity(prePostEnabled = true)
 public class WebConfig implements WebMvcConfigurer {
     private final LoginUserArgumentResolver loginUserArgumentResolver;
 
