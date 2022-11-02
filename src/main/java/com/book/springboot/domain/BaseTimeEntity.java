@@ -15,8 +15,8 @@ import java.time.LocalDateTime;
 public abstract class BaseTimeEntity {
 
     @CreatedDate
-    private LocalDateTime createdDated;
+    private LocalDateTime created_dated;
 
     @LastModifiedDate
-    private LocalDateTime modifiedDate;
+    private LocalDateTime modified_date;
 }
