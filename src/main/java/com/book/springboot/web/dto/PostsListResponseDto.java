@@ -16,7 +16,7 @@ public class PostsListResponseDto {
         this.id=entity.getId();
         this.title=entity.getTitle();
         this.author=entity.getAuthor();
-        this.modifiedDate=entity.getModifiedDate();
+        this.modifiedDate=entity.getModified_date();
     }
 }
 
