@@ -1,6 +1,5 @@
 package com.book.springboot.service.posts;
 
-
 import com.book.springboot.domain.posts.Posts;
 import com.book.springboot.domain.posts.PostsRepository;
 import com.book.springboot.web.dto.PostsListResponseDto;
@@ -10,7 +9,6 @@ import com.book.springboot.web.dto.PostsUpdateRequestDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
 import java.util.List;
 import java.util.stream.Collectors;
 
