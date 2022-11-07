@@ -1,0 +1,51 @@
+spring:
+  profiles.active: local
+  # Security OAuth
+  security:
+    oauth2.client:
+      registration:
+        google:
+          clientId: 302016744757-rou0vng2bg2ab6if589phitgursvsaqm.apps.googleusercontent.com
+          clientSecret: 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
+          scope:
+            - email
+            - profile
+
+        naver:
+          clientId: xqUlSnl9f0InvONZOeeR
+          clientSecret: TVXyGfzkz9
+          clientAuthenticationMethod: post
+          authorizationGrantType: authorization_code
+          redirectUri: "{baseUrl}/{action}/oauth2/code/{registrationId}"
+          scope:
+            - nickname
+            - email
+            - profile_image
+          clientName: Naver
+
+  # Provider 설정
+  provider:
+    naver:
+      authorizationUri: https://nid.naver.com/oauth2.0/authorize
+      tokenUri: https://nid.naver.com/oauth2.0/token
+      userInfoUri: https://openapi.naver.com/v1/nid/me
+      userNameAttribute: response
+  # cors 설정
+  cors:
+    allowed-origins: 'http://localhost:3000'
+    allowed-methods: GET,POST,PUT,DELETE,OPTIONS
+    allowed-headers: '*'
+    max-age: 3600
+
+  # jwt secret key 설정
+  jwt.secret: '8sknjlO3NPTBqo319DHLNqsQAfRJEdKsETOds'
+
+  # 토큰 관련 secret Key 및 RedirectUri 설정
+  app:
+    auth:
+      tokenSecret: 926D96C90030DD58429D2751AC1BDBBC
+      tokenExpiry: 1800000
+      refreshTokenExpiry: 604800000
+    oauth2:
+      authorizedRedirectUris:
+        - http://localhost:3000/oauth/redirect
