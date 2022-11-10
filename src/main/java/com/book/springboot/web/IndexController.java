@@ -1,7 +1,7 @@
 package com.book.springboot.web;
 
 
-import com.book.springboot.domain.user.User;
+//import com.book.springboot.domain.user.User;
 import com.book.springboot.service.posts.PostsService;
 import com.book.springboot.web.dto.PostsResponseDto;
 import lombok.RequiredArgsConstructor;
@@ -20,11 +20,13 @@ public class IndexController {
     private final HttpSession httpSession;
 
     @GetMapping("/")
-    public String index(Model model, User user) {
+    public String index(Model model/*, User user*/) {
         model.addAttribute("posts", postsService.findAllDesc());
+        model.addAttribute("userName");
+        /*
         if (user != null) {
             model.addAttribute("userName", user.getUsername());
-        }
+        }*/
         return "index";
     }
     @GetMapping("/posts/save")
