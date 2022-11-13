@@ -100,6 +100,7 @@ public class PostsApiControllerTest {
         String expectedTitle = "title2";
         String expectedContent = "content2";
 
+
         PostsUpdateRequestDto requestDto = PostsUpdateRequestDto.builder()
                 .title(expectedTitle)
                 .content(expectedContent)
